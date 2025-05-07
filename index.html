@@ -301,11 +301,11 @@
     soundBtn.addEventListener('click', () => {
       if (!playing) {
         audio.play();
-        soundBtn.textContent = "🔈";
+        soundBtn.textContent = "🔊";
         playing = true;
       } else {
         audio.pause();
-        soundBtn.textContent = "🔊";
+        soundBtn.textContent = "🔈";
         playing = false;
       }
     });
