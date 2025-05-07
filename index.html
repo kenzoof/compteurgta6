@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sortie de GTA 6</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow: hidden;
+    }
+
+    #slideshow-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      background-color: black;
+    }
+
+    .bg-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transform: scale(1);
+      transition: opacity 1.5s ease-in-out, transform 10s ease-in-out;
+    }
+
+    .bg-layer.active {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    #countdown-container {
+      text-align: center;
+      color: rgb(16, 134, 150);
+    text-shadow: 5px 5px 4px black;
+    background-color: transparent;
+      position: absolute;
+      top: 35%;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .countdown div {
+      font-size: 2em;
+    }
+
+    .label {
+      font-size: 1em;
+      margin-top: 5px;
+    }
+
+    .logos {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+    }
+
+    .logos img {
+      width: 40px;
+      height: 40px;
+      filter: brightness(1);
+      transition: filter 0.3s;
+    }
+
+    .logos img:hover {
+      filter: brightness(1.5);
+    }
+  </style>
+</head>
+<body>
+  <!-- Slideshow -->
+  <div id="slideshow-container">
+    <div id="bg1" class="bg-layer"></div>
+    <div id="bg2" class="bg-layer"></div>
+  </div>
+
+  <div id="countdown-container">
+    <div id="bg1" class="bg-layer"></div>
+    <h1>Sortie de GTA 6</h1>
+    <div class="countdown">
+      <div>
+        <span id="days">0</span><div class="label">Jours</div>
+      </div>
+      <div>
+        <span id="hours">0</span><div class="label">Heures</div>
+      </div>
+      <div>
+        <span id="minutes">0</span><div class="label">Minutes</div>
+      </div>
+      <div>
+        <span id="seconds">0</span><div class="label">Secondes</div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="logos">
+    <a href="https://www.rockstargames.com/" target="_blank">
+      <img src="Logorockstargames.png" alt="logo1">
+    </a>
+    <a href="https://www.rockstargames.com/vi" target="_blank">
+      <img src="gta-6-logo-01.png" alt="logo2">
+    </a>
+    <a href="https://www.playstation.com/fr-fr/ps5/" target="_blank">
+      <img src="play-station.png" alt="logo3">
+    </a>
+    <a href="https://www.xbox.com/fr-FR/consoles/xbox-series-x" target="_blank">
+      <img src="Xbox_one_logo.svg.png" alt="logo4">
+    </a>
+  </div>
+
+  <script>
+    // Compte à rebours
+    const targetDate = new Date("2026-06-01T00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    const images = [
+      "Ambrosia_01.jpg", "Ambrosia_03.jpg", "Ambrosia_05.jpg",
+      "Boobie_Ike_01.jpg", "Boobie_Ike_03.jpg", "Boobie_Ike_04.jpg", "Boobie_Ike_landscape.jpg",
+      "Brian_Heder_ultrawide.jpg", "Cal_Hampton_04.jpg", "Cal_Hampton_ultrawide.jpg",
+      "DreQuan_Priest_02.jpg", "DreQuan_Priest_03.jpg", "DreQuan_Priest_04.jpg", "DreQuan_Priest_ultrawide.jpg",
+      "Grassrivers_01.jpg", "Grassrivers_02.jpg", "Grassrivers_03.jpg", "Grassrivers_04.jpg",
+      "Jason_and_Lucia_01_landscape.jpg", "Jason_and_Lucia_02_landscape.jpg", "Jason_and_Lucia_Motel_ultrawide.jpg",
+      "Jason_Duval_05.jpg", "Jason_Duval_06.jpg",
+      "Leonida_Keys_01.jpg", "Leonida_Keys_02.jpg", "Leonida_Keys_03.jpg", "Leonida_Keys_04.jpg", "Leonida_Keys_05.jpg",
+      "Lucia_Caminos_01.jpg", "Lucia_Caminos_02.jpg", "Lucia_Caminos_03.jpg", "Lucia_Caminos_04.jpg", "Lucia_Caminos_05.jpg", "Lucia_Caminos_06.jpg",
+      "Mount_Kalaga_National_Park_01.jpg", "Mount_Kalaga_National_Park_02.jpg", "Mount_Kalaga_National_Park_03.jpg",
+      "Mount_Kalaga_National_Park_04.jpg", "Mount_Kalaga_National_Park_05.jpg", "Mount_Kalaga_National_Park_06.jpg",
+      "Port_Gellhorn_04.jpg", "Port_Gellhorn_05.jpg",
+      "Vice_City_01.jpg", "Vice_City_02.jpg", "Vice_City_03.jpg", "Vice_City_04.jpg", "Vice_City_05.jpg",
+      "Vice_City_06.jpg", "Vice_City_07.jpg", "Vice_City_08.jpg", "Vice_City_09.jpg"
+    ];
+
+    let currentIndex = Math.floor(Math.random() * images.length);
+    let showingBg1 = true;
+    const bg1 = document.getElementById("bg1");
+    const bg2 = document.getElementById("bg2");
+
+    function getRandomIndex(exclude) {
+      let index;
+      do {
+        index = Math.floor(Math.random() * images.length);
+      } while (index === exclude);
+      return index;
+    }
+
+    function changeBackground() {
+      const nextIndex = getRandomIndex(currentIndex);
+      const nextImage = images[nextIndex];
+      const nextBg = showingBg1 ? bg2 : bg1;
+      const currentBg = showingBg1 ? bg1 : bg2;
+
+      nextBg.style.backgroundImage = `url('${nextImage}')`;
+      nextBg.classList.add("active");
+      currentBg.classList.remove("active");
+
+      showingBg1 = !showingBg1;
+      currentIndex = nextIndex;
+    }
+
+    setInterval(changeBackground, 3000); // Changer les images toutes les 3 secondes
+    window.onload = changeBackground;
+  </script>
+</body>
+</html>
