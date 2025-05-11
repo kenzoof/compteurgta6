@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Sortie de GTA 6</title>
   <style>
-    /* Styles initiaux inchangés */
     * {
       margin: 0;
       padding: 0;
@@ -172,26 +171,22 @@
   </style>
 </head>
 <body>
-  <!-- Diaporama -->
   <div id="slideshow-container">
     <div id="bg1" class="bg-layer"></div>
     <div id="bg2" class="bg-layer"></div>
   </div>
 
-  <!-- Écran de bienvenue -->
   <div id="welcome-screen">
     <h1>Bienvenue</h1>
     <button id="enter-btn">Entrer sur le site</button>
   </div>
 
-  <!-- Bouton son -->
   <button id="sound-btn">🔊</button>
   <audio id="bg-audio" loop>
     <source src="music.mp3" type="audio/mpeg">
     Votre navigateur ne supporte pas l'audio.
   </audio>
 
-  <!-- Compte à rebours -->
   <div id="countdown-container">
     <h1>Sortie de GTA 6</h1>
     <div class="countdown">
@@ -202,16 +197,16 @@
     </div>
   </div>
 
-  <!-- Logos -->
+  
   <div class="logos">
     <a href="https://www.rockstargames.com/" target="_blank"><img src="Logorockstargames.png" alt="logo1"></a>
     <a href="https://www.rockstargames.com/vi" target="_blank"><img src="gta-6-logo-01.png" alt="logo2"></a>
     <a href="https://www.playstation.com/fr-fr/ps5/" target="_blank"><img src="play-station.png" alt="logo3"></a>
     <a href="https://www.xbox.com/fr-FR/consoles/xbox-series-x" target="_blank"><img src="Xbox_one_logo.svg.png" alt="logo4"></a>
+    <a href="pornhub.com" target="_blank"><img src="logo2.png" alt="Logo site "></a> 
   </div>
 
   <script>
-    // Diaporama
     const images = [
       "Ambrosia_01.jpg", "Ambrosia_03.jpg", "Ambrosia_05.jpg",
       "Boobie_Ike_01.jpg", "Boobie_Ike_03.jpg", "Boobie_Ike_04.jpg", "Boobie_Ike_landscape.jpg",
@@ -261,7 +256,6 @@
       setInterval(changeBackground, 3000);
     }
 
-    // Compte à rebours
     const targetDate = new Date("2026-06-01T00:00:00").getTime();
 
     function updateCountdown() {
@@ -282,7 +276,6 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // Audio + écran d'entrée
     const soundBtn = document.getElementById('sound-btn');
     const audio = document.getElementById('bg-audio');
     const enterBtn = document.getElementById('enter-btn');
@@ -310,7 +303,6 @@
       }
     });
 
-    // Lancer le diaporama dès l'ouverture
     window.addEventListener("load", () => {
       startSlideshow();
     });
